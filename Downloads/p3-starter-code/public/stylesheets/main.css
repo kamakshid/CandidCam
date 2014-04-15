@@ -5899,12 +5899,17 @@ button.close {
 }
 #submission {
   display: none;
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   right: 0;
   border-top: 2px solid #dcc;
   background-color: #5a5a5a;
+  height: 20%;
+}
+#bottom {
+  position: relative;
+  width: 100%;
 }
 #response {
   border: none;
@@ -5937,6 +5942,12 @@ button.close {
   float: left;
   margin-right: 10px;
 }
+#conversation {
+  position: relative;
+  overflow: auto;
+  min-height: 100px;
+  max-height: 300px;
+}
 #request_counter {
   display: none;
   width: 300px;
@@ -5948,10 +5959,10 @@ button.close {
 }
 #notification_center {
   width: 500px;
-  text: white;
+  color: white;
 }
 #info {
-  left: 21%;
+  margin-left: auto;
   position: absolute;
 }
 .msg {

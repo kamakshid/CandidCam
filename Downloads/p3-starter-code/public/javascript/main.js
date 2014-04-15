@@ -44,7 +44,7 @@
 //      if ((sender != username) && (((snapshot.val().m).search(re)) != -1)){
         if((sender != username) && (snapshot.val().r)) {
          $("#notification_center").html("<p id='recording'>Recording Your Reaction!</p>");
-         setTimeout(function(){ $("#recording_container").fadeOut(slow); }, 3000);
+         setTimeout(function(){ $("#recording").hide(); }, 3000);
 
 
 //        var time = 0;
@@ -69,10 +69,11 @@
       username = "anonymous"+Math.floor(Math.random()*1111);
     }
 
-    alert("Welcome to CandidCam, "+ username + "!\nHow it works:\nYou and your chat partner each get three chances to request a real-time video of the other's reaction.\nShare this url with your friend to join the chat and get started!");
+    alert("Welcome to CandidCam, "+ username + "!\nHow it works:\nYou and your chat partner each get three chances to request a real-time video of the other's reaction.\nShare this url( " + document.location.origin+"/#"+fb_chat_room_id + " ) with your friend to join the chat and get started!");
     $("#submission").show();
-    $("request_counter").show();
-    
+    $("#request_counter").show();
+    display_msg({m:"Share this url with your friend to join this chat: "+ document.location.origin+"/#"+fb_chat_room_id,c:"red"})
+
     fb_instance_users.push({ name: username,c: my_color});
     $("#waiting").remove();
 
@@ -130,7 +131,7 @@
   function scroll_to_bottom(wait_time){
     // scroll to bottom of div
     setTimeout(function(){
-      $("html, body").animate({ scrollTop: $(document).height() }, 200);
+      $("#conversation").animate({ scrollTop: $(document).height() }, 200);
     },wait_time);
   }
 
